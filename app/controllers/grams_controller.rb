@@ -9,11 +9,6 @@ class GramsController < ApplicationController
     @gram = Gram.new
   end
 
-  def show
-    @gram = Gram.find_by_id(params[:id])
-      return render_not_found if @gram.blank?
-  end
-
   def create
     @gram = current_user.grams.create(gram_params)
     if @gram.valid?
@@ -23,9 +18,22 @@ class GramsController < ApplicationController
     end
   end
 
+  def show
+    @gram = Gram.find_by_id(params[:id])
+      return render_not_found if @gram.blank?
+  end
+
+
   def edit
     @gram = Gram.find_by_id(params[:id])
     return render_not_found if @gram.blank?
+  end
+
+  def destroy
+    @gram = Gram.find_by_id(params[:id])
+    return render_not_found if @gram.blank?
+    @gram.destroy
+    redirect_to root_path
   end
 
   def update
