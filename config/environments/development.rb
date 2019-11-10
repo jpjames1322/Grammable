@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.assets.compile = true
   config.action_mailer.default_url_options = { host: 'https://grammable-jared-phillips.herokuapp.com' }
   # Settings specified here will take precedence over those in config/application.rb.
 
