@@ -11,6 +11,7 @@ gem 'jquery-rails'
 gem "figaro"
 gem "font-awesome-rails"
 gem 'fog-aws'
+gem 'tether-rails'
 
 
 
